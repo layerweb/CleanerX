@@ -1,4 +1,4 @@
-# CleanerX — Optimizer
+# CleanerX — Windows Optimizer
 Open source optimization program for Windows.
 
 **Features:**<br />
