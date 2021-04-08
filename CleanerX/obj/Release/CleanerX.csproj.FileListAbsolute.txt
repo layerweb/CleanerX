@@ -1,0 +1,9 @@
+C:\Users\90537\source\repos\CleanerX\CleanerX\bin\Release\CleanerX.exe.config
+C:\Users\90537\source\repos\CleanerX\CleanerX\bin\Release\CleanerX.exe
+C:\Users\90537\source\repos\CleanerX\CleanerX\bin\Release\CleanerX.pdb
+C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.Main.resources
+C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.Properties.Resources.resources
+C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.csproj.GenerateResource.cache
+C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.csproj.CoreCompileInputs.cache
+C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.exe
+C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.pdb
