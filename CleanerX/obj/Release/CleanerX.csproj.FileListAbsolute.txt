@@ -7,3 +7,4 @@ C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.csproj.Genera
 C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.csproj.CoreCompileInputs.cache
 C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.exe
 C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.pdb
+C:\Users\90537\source\repos\CleanerX\CleanerX\obj\Release\CleanerX.csprojAssemblyReference.cache

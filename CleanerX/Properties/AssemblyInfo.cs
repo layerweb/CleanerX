@@ -8,10 +8,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CleanerX")]
 [assembly: AssemblyDescription("Optimize")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Muteo")]
 [assembly: AssemblyProduct("CleanerX")]
 [assembly: AssemblyCopyright("Copyright © Muteo")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Muteo")]
 [assembly: AssemblyCulture("")]
 
 // ComVisible özniteliğinin false olarak ayarlanması bu bütünleştirilmiş koddaki türleri
