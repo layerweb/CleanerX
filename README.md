@@ -1,3 +1,3 @@
 # CleanerX Windows Server/Pro/Home Auto Optimizer
 
-Coder: Muteo @Muteo42
+Coder: https://github.com/Muteo42
