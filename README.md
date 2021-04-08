@@ -1,4 +1,7 @@
 # CleanerX — Windows Optimizer
+
+[![GitHub Release](https://img.shields.io/github/release/obirninja-lab/CleanerX.svg)](https://github.com/obirninja-lab/CleanerX/releases/latest) [![Download](https://img.shields.io/github/downloads/obirninja-lab/CleanerX/total?color=blue)](https://github.com/obirninja-lab/CleanerX/releases/latest)
+
 Open source optimization program for Windows.
 
 **Features:**<br />
