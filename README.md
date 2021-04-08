@@ -7,7 +7,7 @@ Open source optimization program for Windows.
 **•** *Clears RAM when RAM usage exceeds 60%*<br />
 
 **Requirements:**<br />
-.NET Framework 2.0
+*.NET Framework 2.0*
 
-Coder: https://github.com/Muteo42<br />
-Idea: @ertugrulturan / T13R
+**Coded By:** https://github.com/Muteo42<br />
+**Idea:** *@ertugrulturan / T13R*
