@@ -2,6 +2,7 @@
 Open source optimization program for Windows.
 
 **Features:**
+
 **•** Stops unnecessary services when started.
 **•** Clears temp folders when started.
 **•** Clears RAM when RAM usage exceeds 60%
