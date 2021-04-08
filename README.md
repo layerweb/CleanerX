@@ -12,5 +12,5 @@ Open source optimization program for Windows.
 **Requirements:**<br />
 *.NET Framework 2.0*
 
-**Coded By:** [@Muteo42](https://github.com/Muteo42)
+**Coded By:** [@Muteo42](https://github.com/Muteo42)<br />
 **Idea:** [@ertugrulturan](https://github.com/ertugrulturan)
