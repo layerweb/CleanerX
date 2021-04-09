@@ -14,9 +14,9 @@ Open source optimization program for Windows.
 <br />
 
 Before Using CleanerX,
-[![Firewall Test Video Preview](https://cdn.discordapp.com/attachments/801912753488396288/829871721463939102/unknown-4.png)](https://cdn.discordapp.com/attachments/801912753488396288/829871721463939102/unknown-4.png)
+[![cleanerx](https://cdn.discordapp.com/attachments/760506877804806204/830031719272808458/ss1.png)](https://cdn.discordapp.com/attachments/760506877804806204/830031719272808458/ss1.png)
 After Using CleanerX,
-[![Firewall Test Video Preview](https://media.discordapp.net/attachments/801912753488396288/829871721728835595/unknown-3.png?width=919&height=517)](https://media.discordapp.net/attachments/801912753488396288/829871721728835595/unknown-3.png?width=919&height=517)
+[![cleanerx](https://cdn.discordapp.com/attachments/760506877804806204/830031724842450954/ss2.png)](https://cdn.discordapp.com/attachments/760506877804806204/830031724842450954/ss2.png)
 
 <br />
 
