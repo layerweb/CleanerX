@@ -12,5 +12,15 @@ Open source optimization program for Windows.
 **Requirements:**<br />
 *.NET Framework +2.0*
 
+<br />
+**Direct Download Link:** https://github.com/obirninja-lab/CleanerX/releases
+<br />
+Before Using CleanerX,
+[![Before](https://cdn.discordapp.com/attachments/801912753488396288/829871721463939102/unknown-4.png)
+<br />
+After Using CleanerX,
+[![After](https://media.discordapp.net/attachments/801912753488396288/829871721728835595/unknown-3.png?width=919&height=517)
+<br />
+
 **Coded By:** [@Muteo42](https://github.com/Muteo42)<br />
 **Idea:** [@ertugrulturan](https://github.com/ertugrulturan)
