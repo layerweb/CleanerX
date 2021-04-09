@@ -16,9 +16,9 @@ Open source optimization program for Windows.
 **Direct Download Link:** https://github.com/obirninja-lab/CleanerX/releases
 <br />
 #Before Using CleanerX,
-[![Before](https://cdn.discordapp.com/attachments/801912753488396288/829871721463939102/unknown-4.png)
+[![Before](https://cdn.discordapp.com/attachments/801912753488396288/829871721463939102/unknown-4.png)](https://cdn.discordapp.com/attachments/801912753488396288/829871721463939102/unknown-4.png)
 #After Using CleanerX
-[![After](https://media.discordapp.net/attachments/801912753488396288/829871721728835595/unknown-3.png?width=919&height=517)
+[![After](https://media.discordapp.net/attachments/801912753488396288/829871721728835595/unknown-3.png?width=919&height=517)](https://media.discordapp.net/attachments/801912753488396288/829871721728835595/unknown-3.png?width=919&height=517)
 
 <br />
 
