@@ -3,7 +3,10 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
+using System.Security;
 using System.ServiceProcess;
 using System.Windows.Forms;
 
@@ -13,12 +16,75 @@ namespace CleanerX
     {
         [DllImport("psapi")]
         public static extern int EmptyWorkingSet(IntPtr handle);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Ansi, SetLastError = true, ExactSpelling = true)]
+        private static extern IntPtr GetProcAddress(IntPtr hModule, string methodName);
+
+        [ReliabilityContract(Consistency.WillNotCorruptState, Cer.MayFail), DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr GetModuleHandle(string moduleName);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        internal static extern IntPtr GetCurrentProcess();
+
+        [SecurityCritical]
+        internal static bool DoesWin32MethodExist(string moduleName, string methodName)
+        {
+            IntPtr moduleHandle = GetModuleHandle(moduleName);
+            if (moduleHandle == IntPtr.Zero)
+            {
+                return false;
+            }
+            return (GetProcAddress(moduleHandle, methodName) != IntPtr.Zero);
+        }
+
+        [return: MarshalAs(UnmanagedType.Bool)]
+        [DllImport("kernel32.dll", SetLastError = true)]
+        internal static extern bool IsWow64Process([In] IntPtr hSourceProcessHandle, [MarshalAs(UnmanagedType.Bool)] out bool isWow64);
+
+        [SecuritySafeCritical]
+        public static bool get_Is64BitOperatingSystem()
+        {
+            bool flag;
+            return (IntPtr.Size == 8) ||
+                ((DoesWin32MethodExist("kernel32.dll", "IsWow64Process") &&
+                IsWow64Process(GetCurrentProcess(), out flag)) && flag);
+        }
         public Main()
         {
             InitializeComponent();
-            RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-            key.SetValue("CleanerX", Application.ExecutablePath);
+            if (Process.GetProcessesByName("CleanerX").Length > 1) Environment.Exit(0);
+            RegistryKey key;
             ServiceController controller;
+            key = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\CleanerX", true);
+            if (key == null)
+            {
+                Registry.LocalMachine.CreateSubKey("Software\\Microsoft\\CleanerX");
+                key = Registry.LocalMachine.OpenSubKey("Software\\Microsoft\\CleanerX", true);
+                key.SetValue("RAM", "60");
+                Globals.RAMPercent = 59;
+            }
+            else Globals.RAMPercent = Convert.ToInt32(key.GetValue("RAM")) - 1;
+            key.Close();
+            if (get_Is64BitOperatingSystem())
+            {
+                try
+                {
+                    key = Registry.LocalMachine.OpenSubKey("SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                    key.SetValue("CleanerX", "\"" + Application.ExecutablePath + "\"");
+                    key.Close();
+                }
+                catch { }
+            }
+            else
+            {
+                try
+                {
+                    key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+                    key.SetValue("CleanerX", "\"" + Application.ExecutablePath + "\"");
+                    key.Close();
+                }
+                catch { }
+            }
             try
             {
                 controller = new ServiceController("XblAuthManager");
@@ -115,7 +181,7 @@ namespace CleanerX
             Int64 tot = PerformanceInfo.GetTotalMemoryInMiB();
             decimal percentFree = ((decimal)phav / (decimal)tot) * 100;
             decimal percentOccupied = 100 - percentFree;
-            if (Math.Round(percentOccupied) > 59)
+            if (Math.Round(percentOccupied) > Globals.RAMPercent)
             {
                 Process[] process = Process.GetProcesses();
                 foreach (Process p in process) try { EmptyWorkingSet(p.Handle); } catch { }
@@ -133,12 +199,18 @@ namespace CleanerX
             this.Hide();
             notifyIcon1.ShowBalloonTip(3000);
             notifyIcon1.ContextMenuStrip = new ContextMenuStrip();
+            notifyIcon1.ContextMenuStrip.Items.Add("Settings", null, this.ramPercent_Click);
             notifyIcon1.ContextMenuStrip.Items.Add("Exit", null, this.exit_Click);
         }
 
         void exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        void ramPercent_Click(object sender, EventArgs e)
+        {
+            RAM ram = new RAM();
+            ram.Show();
         }
     }
     public static class PerformanceInfo
